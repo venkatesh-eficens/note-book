@@ -1,0 +1,61 @@
+homechef-backend deployment:
+
+cd /home/ubuntu/backend
+sudo screen -r homeshef
+sudo npm install --force &
+sudo npm start --force &
+-------------------------------------------------------------
+Timesheet backend deploynment:
+
+git pull
+git checkout .
+git status
+netstat -tulpn
+kill portnumber
+source timesheet_env/bin/activate
+nohup uvicorn main:app --host=0.0.0.0 --port=8080 &
+
+Timesheet frontend deploynment:
+git pull
+git checkout .
+git status
+aws s3 sync ./dist s3://timesheets-frontend
+-------------------------------------------------------------
+trusynth backend deploynment:
+
+git pull
+git checkout .
+git status
+netstat -tulpn
+kill portnumber
+source truesynth_env/bin/activate
+nohup uvicorn main:app --host=0.0.0.0 --port=8080 &
+
+trusynth frontend deploynment:
+git pull
+git checkout .
+git status
+aws s3 sync ./dist s3://true-synth-fe
+------------------------------------------------------------
+
+venv file commands:
+python --version
+python3 --version
+ls -la
+sudo nano .bashrc
+     alias python='python3'
+python --version
+ls
+python -m venv timesheet_env
+ls
+source timesheet_env/bin/activate
+cd timesheets-backend/
+
+
+-------------------------------------------------------------
+urls:
+truesynth backend url:  https://truesynth-api.eficensittest.com/docs
+truesynth frontend url: https://trusynth.eficensittest.com
+timesheet frontend url: https://timesheet.eficensittest.com
+timesheet backend url: https://timesheets-api.eficensittest.com/docs
+homechef backend url: http://homechef.eficensittest.com/docs
